@@ -1,0 +1,54 @@
+/* Updated CSS styles for the search bar */
+.form__control > input {
+  box-sizing: border-box;
+  height: 50px;
+  padding-left: 40px; /* Increased padding to make space for the icon */
+  border: 1px solid gray;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  background-color: transparent;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%; /* Ensure full width for better responsiveness */
+}
+
+.form__control > input::placeholder {
+  font-size: 16px;
+  font-family: Roboto, Arial;
+  color: #888; /* Placeholder color */
+}
+
+/* Updated styles for active/focused state */
+.form__control > input:focus {
+  border-color: #f9a2a4;
+  box-shadow: 0 0 5px rgba(236, 52, 55, 0.5); /* Corrected box-shadow color */
+}
+
+.form__control > input:focus::placeholder {
+  color: #bbb; /* Placeholder color when input is focused */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form__control > input {
+    height: 45px;
+    font-size: 14px;
+    padding-left: 35px;
+  }
+
+  .form__control > input::placeholder {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form__control > input {
+    height: 40px;
+    font-size: 12px;
+    padding-left: 30px;
+  }
+
+  .form__control > input::placeholder {
+    font-size: 12px;
+  }
+}

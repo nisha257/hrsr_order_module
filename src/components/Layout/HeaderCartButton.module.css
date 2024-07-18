@@ -1,0 +1,107 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #ec3437;
+  color: white;
+  padding: 0.75rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+  position: relative; /* Added position to contain the badge */
+  transition: background-color 0.3s, transform 0.3s; /* Added transition for smoother effects */
+}
+
+.button:hover,
+.button:active {
+  background-color: #fc8688;
+  transform: scale(1.05); /* Added slight scale effect on hover */
+}
+
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.badge {
+  background-color: #ffffff;
+  color: #ec3437;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 0.8rem;
+}
+
+.button:hover .badge,
+.button:active .badge {
+  background-color: #92320c;
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .button {
+    padding: 0.5rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .badge {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.7rem;
+    top: -8px;
+    right: -8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .badge {
+    padding: 0.1rem 0.4rem;
+    font-size: 0.6rem;
+    top: -6px;
+    right: -6px;
+  }
+}

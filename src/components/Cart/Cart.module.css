@@ -1,0 +1,150 @@
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 20rem;
+  overflow-y: auto; /* Changed to overflow-y for better control */
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ec3437;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+}
+
+.cart-item h2 {
+  margin: 0 0 0.5rem 0;
+  color: #363636;
+  flex: 1; /* Allow the title to take available space */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis to overflow text */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.summary {
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  color: #ec3437;
+}
+
+.amount {
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  color: #363636;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Prevent the actions from shrinking */
+}
+
+@media (min-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
+}
+
+.cart-item button {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #ec3437;
+  border: 1px solid #ec3437;
+  width: 6rem; /* Fixed width for consistency */
+  text-align: center;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin: 0.25rem;
+}
+
+.cart-item button:hover,
+.cart-item button:active {
+  background-color: #ec3437;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .total {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2rem;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .cart-item button {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item h2 {
+    font-size: 1rem;
+  }
+
+  .price, .amount {
+    font-size: 1rem;
+  }
+
+  .cart-item button {
+    font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .actions button {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
+  }
+
+  .cart-items {
+    max-height: 10rem;
+  }
+}

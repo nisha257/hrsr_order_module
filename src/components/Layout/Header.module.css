@@ -1,0 +1,145 @@
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+/* Non-transparent background on scrolling */
+.header.non-transparent {
+  background-color: #ffffff;
+}
+
+/* Logo or branding element styles */
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Navigation menu styles */
+.header__menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu li {
+  margin-right: 20px;
+  position: relative;
+}
+
+.header__menu li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ec3437;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.header__menu li:hover::before {
+  transform: scaleX(1);
+}
+
+.header__menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* Main image styles */
+.main-image {
+  width: 100%;
+  height: 25rem;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 5%;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header__menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__menu li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .header__menu a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .main-image {
+    height: 20rem;
+  }
+
+  .main-image img {
+    transform: rotateZ(-5deg) translateY(-3rem) translateX(-0.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 4rem;
+    padding: 0 2%;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .header__menu {
+    align-items: center;
+  }
+
+  .header__menu a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .main-image {
+    height: 20rem;
+  }
+
+  .main-image img {
+    transform: rotateZ(-5deg) translateY(-3rem) translateX(-0.5rem);
+  }
+}

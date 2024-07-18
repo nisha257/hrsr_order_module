@@ -1,0 +1,111 @@
+.form {
+  margin: 1rem;
+  height: 20rem;
+  overflow: auto;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.actions button {
+  font: inherit;
+  color: #ec3437;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ec3437;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  transition: background-color 0.3s, color 0.3s; /* Added transition for smoother hover effect */
+  min-width: 6rem; /* Ensure consistent button width */
+  text-align: center;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #ffe6dc;
+}
+
+.actions .submit {
+  border: 1px solid #ec3437;
+  background-color: #ec3437;
+  color: white;
+}
+
+.actions .submit:hover,
+.actions .submit:active {
+  background-color: #ec3437;
+}
+
+.invalid label {
+  color: #ca3e51;
+}
+
+.invalid input {
+  border-color: #ec3437;
+  background-color: #ffeff1;
+}
+
+.control p {
+  color: #ca3e51;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form {
+    height: auto;
+    margin: 0.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    height: auto;
+    margin: 0.5rem;
+  }
+
+  .control input {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .actions button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+}

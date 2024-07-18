@@ -1,0 +1,140 @@
+.meals {
+  max-width: 60rem;
+  width: 90%;
+  margin: 2rem auto;
+  animation: meals-appear 1s ease-out forwards;
+}
+
+.MealsIsLoading {
+  text-align: center;
+  color: white;
+}
+
+.MealsError {
+  text-align: center;
+  color: red;
+}
+
+.meals ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pagination {
+  padding: 10px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Added flex-wrap for better responsiveness */
+}
+
+.pagination > span {
+  padding: 5px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+  margin: 5px; /* Added margin for better spacing */
+}
+
+.pagination > span:hover {
+  background-color: #ec3437;
+  color: white;
+}
+
+.pagination__disable {
+  opacity: 0.3; /* Slightly visible or entirely disable interactions via 'pointer-events: none' if completely non-interactive */
+  pointer-events: none;
+}
+
+.pagination__selected {
+  background-color: rgb(220, 220, 220);
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap; /* Added flex-wrap for better responsiveness */
+}
+
+.sort label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.sort select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+  margin-top: 0.5rem; /* Added margin-top for better spacing on mobile */
+}
+
+.sort select:hover,
+.sort select:focus {
+  border-color: #333;
+}
+
+.sort option {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sort {
+    justify-content: center;
+  }
+
+  .sort label {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  .sort select {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .pagination > span {
+    padding: 5px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .meals {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  .sort {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort select {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .pagination > span {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
